@@ -15,5 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// tutors
 
 Route::get('tutor', 'tutorsController@index')->name('tutors');
+
+Route::post('tutor', 'tutorsController@getTutors')->name('gettutors');
+
+// Tutor signup_user
+
+Route::get('tutor_signup', 'tutorsController@index')->name('tutor_signup');
+
+Route::post('tutor_signup', 'tutorsController@getTutors')->name('gettutor_signup');
+
+
+// students
+
+Route::get('students', 'tutorsController@index')->name('tutors');
+
+Route::post('tutor', 'tutorsController@getTutors')->name('gettutors');
