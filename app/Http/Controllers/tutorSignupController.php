@@ -14,10 +14,10 @@ class tutorSignupController extends Controller
 
   public function gotTutors(Request $request) {
 
-    $tutor = new tutors;
-    $tutor->first_name = $request->first_name;
-
-    $tutor->save();
-
+    // $tutor = new tutors;
+    // $tutor->first_name = $request->first_name;
+    //
+    // $tutor->save();
+}
 
 }

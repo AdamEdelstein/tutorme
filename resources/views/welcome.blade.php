@@ -3,20 +3,21 @@
     <head>
         <title>TutorMe - Learn something, Today!</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
+        <link href="{{{ asset('/css/foundation.css') }}}" rel="stylesheet">
         <link href="{{{ asset('/css/style.css') }}}" rel="stylesheet">
+
 
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">TutorMe.com</div>
+                <div class="row">TutorMe.com</div>
                 <br>
-                <form action="http://tutorme.app/tutor_signup">
-                  <input type="submit" value="Become a Teacher">
-              </form>
-                <button>Become a Student</button>
+
+                <div class="row">
+                    <p><a href="#" class="button">Become a Teacher</a>  <a href="#" class="button">Become a Student</a></p>
+                </div>
             </div>
         </div>
     </body>
