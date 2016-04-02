@@ -1,5 +1,69 @@
 /*Helper Classes*/
 
-body {
+/*Main Homepage*/
+.intro-text {
+  width: 50%;
+  font-weight: bold;
+  font-size: 120%;
+  z-index: 5;
+  margin-top: -30%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.intro-buttons {
+  padding-top: 10%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.splash-img img{
+
+}
+
+.about-us {
+  padding: 8% 4% 8% 4%;
+  text-align: center;
+}
+
+.about-us h3 {
+
+}
+
+.new-tutors {
+  background-color: #2199e8;
+  padding: 8% 1% 8% 1%;
+  text-align: center;
+}
+
+.latest-skills {
+  text-align: center;
+  padding: 4% 8% 4% 8%;
+}
+
+
+
+
+/* Bump Helpers */
+
+.bump10 {
+  margin-top: 10px;
+}
+
+.bump20 {
+  margin-top: 20px;
+}
+
+.bump30 {
+  margin-top: 30px;
+}
+
+.bump40 {
+  margin-top: 40px;
+}
+
+.bump50 {
+  margin-top: 50px;
 }
