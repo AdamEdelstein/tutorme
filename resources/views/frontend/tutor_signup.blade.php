@@ -8,6 +8,10 @@
         <link href="{{{ asset('/css/foundation.css') }}}" rel="stylesheet">
         <link href="{{{ asset('/css/style.css') }}}" rel="stylesheet">
 
+        <link href="{{{ asset('/css/style.css') }}}" rel="stylesheet">
+
+        <script src="{{{ asset('/js/script.js') }}}"></script>
+
     </head>
     <body>
       <div class="container">
@@ -63,6 +67,17 @@
 
                 <div class="small-12 columns">
                 <h3>Skill Information</h3>
+
+                <ul class="tags">
+                           <li class="addedTag">Web Deisgn<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="Web Deisgn"></li>
+
+                            <li class="addedTag">Web Develop<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="Web Develop"></li>
+
+                            <li class="addedTag">SEO<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="SEO"></li>
+                            			<li class="tagAdd taglist">
+                              				 <input type="text" id="search-field">
+                			            </li>
+                	</ul>
 
                   {!! Form::label('skills', 'Enter your skills seperated by commas:'); !!}{!! Form::text('skills'); !!}<br>
                   {!! Form::label('skills_media', 'Add images of your skills should you choose to do so'); !!}<br>

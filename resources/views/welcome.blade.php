@@ -10,13 +10,28 @@
 
     </head>
     <body>
+
+
+
+
+
         <div class="container">
             <div class="content">
 
               <!-- Splash Image and Intro Text -->
               <div class="splash-img">
+                <ul>
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#news">About</a></li>
+                  <li><a href="#contact">Tutors</a></li>
+                  <li><a href="#contact">Students</a></li>
+                  <li><a href="#contact">Join</a></li>
+                  <li style="float:right"><a class="active" href="#about">Login</a></li>
+                </ul>
+
                 {!! Html::image('img/pages/welcome/sky-intro.png') !!}
               </div>
+
 
               <div class="intro-text text-center">
                 <h1>TutorMe.com</h1>
@@ -25,8 +40,8 @@
               <br>
 
               <div class="intro-buttons text-center">
-                  <p><a href="#" class="button">Become a Teacher</a>
-                  <a href="#" class="button">Become a Student</a></p>
+                  <p><a href='{{ URL::to('tutor_signup') }}' class="button button-signup">Become a Tutor</a>
+                  <a href="#" class="button button-signup">Become a Student</a></p>
               </div>
 
               <!-- Grid of Statements about us -->
@@ -53,7 +68,8 @@
                 </div>
               </div>
 
-              <div class="row new-tutors">
+              <div class="new-tutors">
+                <div class="row">
                 <div class="section-title"><h2>Check out our 3 Newest Tutors!</h2>
                   <br><br>
                   <div class="small-12 medium-4 columns">
@@ -79,6 +95,7 @@
                     Alt Payments?: Yes! <br>
                     Skills: Painting, Mongolian Chants, Candle Making, Gluten-Free Cooking<br>
                   </div>
+                  </div>
                 </div>
             </div>
 
@@ -87,55 +104,58 @@
 
                   <div class="bump40">
                       <div class="small-2 columns">
-                        Subject 1
+                        Skill 1
                       </div>
 
                       <div class="small-2 columns">
-                        Subject 2
+                        Skill 2
                       </div>
 
                       <div class="small-2 columns">
-                        Subject 3
+                        Skill 3
                       </div>
 
                       <div class="small-2 columns">
-                        Subject 4
+                        Skill 4
                       </div>
 
                       <div class="small-2 columns">
-                        Subject 5
+                        Skill 5
                       </div>
 
                       <div class="small-2 columns">
-                        Subject 6
+                        Skill 6
                       </div>
             </div>
           </div>
             <div class="row latest-skills">
                       <div class="small-2 columns">
-                        Subject 7
+                        Skill 7
                       </div>
 
                       <div class="small-2 columns">
-                        Subject 8
+                        Skill 8
                       </div>
 
                       <div class="small-2 columns">
-                        Subject 9
+                        Skill 9
                       </div>
 
                       <div class="small-2 columns">
-                        Subject 10
+                        Skill 10
                       </div>
 
                       <div class="small-2 columns">
-                        Subject 11
+                        Skill 11
                       </div>
 
                       <div class="small-2 columns">
-                        Subject 12
+                        Skill 12
                       </div>
+              </div>
 
+              <div class="footer">
+                Copyright 2016 - Adam Edelstein
               </div>
         </div>
     </body>
