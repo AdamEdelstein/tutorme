@@ -3,22 +3,46 @@
     <head>
         <title>Tutor Signup Form</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
         <link href="{{{ asset('/css/foundation.css') }}}" rel="stylesheet">
         <link href="{{{ asset('/css/style.css') }}}" rel="stylesheet">
 
-        <link href="{{{ asset('/css/style.css') }}}" rel="stylesheet">
+        <script type="text/javascript" src='//code.jquery.com/jquery-1.10.2.min.js'></script>
+        <script type="text/javascript" src='{{ url("/selectize/dist/js/standalone/selectize.min.js") }}'></script>
+        <script type="text/javascript" src="{{{ asset('/js/script.js')}}}"></script>
 
-        <script src="{{{ asset('/js/script.js') }}}"></script>
 
     </head>
     <body>
       <div class="container">
         <div class="content">
+
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#news">About</a></li>
+              <li><a href="#contact">Search</a></li>
+              <li><a href="#contact">Join</a></li>
+              <li style="float:right"><a class="active" href="#about">Login</a></li>
+            </ul>
+
+          </div>
+
           <div class="row">
             <div class="small-12 medium-8 columns">
               <h1>To join us as a tutor, please fill out the form below:</h1>
+
+              <br><br>
+
+              <ul class="tags">
+                       <li class="addedTag">Web Deisgn<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="Web Deisgn"></li>
+
+                        <li class="addedTag">Web Develop<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="Web Develop"></li>
+
+                        <li class="addedTag">SEO<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="SEO"></li>
+                        			<li class="tagAdd taglist">
+                          				 <input type="text" id="search-field">
+            			            </li>
+            	</ul>
 
               <br><br>
 
@@ -51,12 +75,14 @@
                 </div>
 
                 <div class="small-12 columns">
+                  {!! Form::checkbox('online_lessons_bool', 'online_lessons') !!}{!! Form::label('online_lessons_bool', 'Would you like to teach or learn through online tools such as Skype?') !!}<br>
                   {!! Form::checkbox('alt_payment_bool', 'alt_payment') !!}{!! Form::label('alt_payment_bool', 'Do you
                 accept alternate forms of payment (for ex: gift-cards, 6-packs, or barter)?') !!}<br>
                 </div>
 
                 <div class="small-12 columns">
-                  {!! Form::label('alt_payments', 'If so, what do you prefer?'); !!}{!! Form::text('alt_payments'); !!}<br>
+                  <br>
+                  {!! Form::label('alt_payments', 'If you accept alternate payments, what items would you prefer?'); !!}{!! Form::text('alt_payments'); !!}<br>
                 </div>
 
                 <div class="small-12 columns">
@@ -65,21 +91,16 @@
 
                 <hr>
 
-                <div class="small-12 columns">
                 <h3>Skill Information</h3>
+                <div class="small-12 medium-6 columns">
+                  {!! Form::label('skills_learn', 'Enter the skills you want to learn:'); !!}{!! Form::text('skills'); !!}<br>
+                </div>
 
-                <ul class="tags">
-                           <li class="addedTag">Web Deisgn<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="Web Deisgn"></li>
+                <div class="small-12 medium-6 columns">
+                  {!! Form::label('skills_teach', 'Enter the skills are comfortable teaching:'); !!}{!! Form::text('skills'); !!}<br>
+                </div>
 
-                            <li class="addedTag">Web Develop<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="Web Develop"></li>
-
-                            <li class="addedTag">SEO<span onclick="$(this).parent().remove();" class="tagRemove">x</span><input type="hidden" name="tags[]" value="SEO"></li>
-                            			<li class="tagAdd taglist">
-                              				 <input type="text" id="search-field">
-                			            </li>
-                	</ul>
-
-                  {!! Form::label('skills', 'Enter your skills seperated by commas:'); !!}{!! Form::text('skills'); !!}<br>
+                <div class="small-12 columns">
                   {!! Form::label('skills_media', 'Add images of your skills should you choose to do so'); !!}<br>
                   {!! Form::file('image'); !!}<br><br>
                 </div>
@@ -92,6 +113,8 @@
                   {!! Form::label('twitter', 'Twitter:'); !!}{!! Form::text('twitter'); !!}<br>
                   {!! Form::label('instagram', 'Instagram:'); !!}{!! Form::text('instagram'); !!}<br>
                   {!! Form::label('youtube', 'Youtube:'); !!}{!! Form::text('youtube'); !!}<br>
+                  {!! Form::label('skype', 'Skype:'); !!}{!! Form::text('Skype'); !!}<br>
+
 
                   <div class="button">{!! Form::submit('Submit'); !!}</div>
 

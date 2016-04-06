@@ -12,28 +12,30 @@ class Users extends Migration
      */
     public function up()
     {
-      Schema::create('users', function(Blueprint $users_table) {
-        $tudors_table->increments('id');
-        $tudors_table->string('first_name');
-        $tudors_table->string('last_name');
-        $tudors_table->string('email');
-        $tudors_table->string('city');
-        $tudors_table->decimal('price', 2);
-        $tudors_table->boolean('alt_payment_bool');
-        $tudors_table->string('alt_payments');
-        $tudors_table->string('availability';);
-        $tudors_table->string('profile_img');
-        $tudors_table->string('facebook');
-        $tudors_table->string('twitter');
-        $tudors_table->string('instagram');
-        $tudors_table->string('youtube');
-        $tudors_table->string('skills');
-        $tudors_table->string('skills_img');
+      Schema::create('users_table', function(Blueprint $users_table) {
+        $users_table->increments('id');
+        $users_table->string('first_name');
+        $users_table->string('last_name');
+        $users_table->string('email');
+        $users_table->string('city');
+        $users_table->decimal('price', 2);
+        $users_table->string('profile_img');
+        $users_table->boolean('online_lessons_bool');
+        $users_table->boolean('alt_payment_bool');
+        $users_table->string('alt_payments');
+        $users_table->string('availability');
+        $users_table->string('skills_learn');
+        $users_table->string('skills_teach');
+        $users_table->string('skills_img');
+        $users_table->string('facebook');
+        $users_table->string('twitter');
+        $users_table->string('instagram');
+        $users_table->string('youtube');
+        $users_table->string('skype');
 
-
-        $tudors_table->date('created_at');
-    }
-
+        $users_table->date('created_at');
+    });
+}
     /**
      * Reverse the migrations.
      *

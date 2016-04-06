@@ -23,8 +23,7 @@
                 <ul>
                   <li><a href="#home">Home</a></li>
                   <li><a href="#news">About</a></li>
-                  <li><a href="#contact">Tutors</a></li>
-                  <li><a href="#contact">Students</a></li>
+                  <li><a href="#contact">Search</a></li>
                   <li><a href="#contact">Join</a></li>
                   <li style="float:right"><a class="active" href="#about">Login</a></li>
                 </ul>
@@ -40,8 +39,7 @@
               <br>
 
               <div class="intro-buttons text-center">
-                  <p><a href='{{ URL::to('tutor_signup') }}' class="button button-signup">Become a Tutor</a>
-                  <a href="#" class="button button-signup">Become a Student</a></p>
+                  <p><a href='{{ URL::to('tutor_signup') }}' class="button large button-signup">Join Us</a></p>
               </div>
 
               <!-- Grid of Statements about us -->

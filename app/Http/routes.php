@@ -33,3 +33,8 @@ Route::post('tutor_signup', 'tutorSignupController@getTutors')->name('gettutor_s
 Route::get('students', 'tutorsController@index')->name('tutors');
 
 Route::post('tutor', 'tutorsController@getTutors')->name('gettutors');
+
+
+// Search
+
+Route::get('search', 'searchController@index')->name('search');

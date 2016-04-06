@@ -87,16 +87,6 @@ li a:hover:not(.active) {
 
 /*Tag Input*/
 
-body {
-    font-family: tahoma;
-}
-ol, ul {
-    list-style: outside none none;
-}
-#container {
-    margin: 0 auto;
-    width: 60rem;
-}
 .tags {
     background: none repeat scroll 0 0 #fff;
     border: 1px solid #ccc;
@@ -133,17 +123,6 @@ span.tagRemove {
 span.tagRemove:hover {
     color: #222222;
 }
-P, H1 {
-    text-align: center;
-}
-p {
-    color: #ccc;
-}
-h1 {
-    color: #6b6b6b;
-    font-size: 1.5em;
-}
-
 
 /* Bump Helpers */
 

@@ -12,12 +12,11 @@ class Skills extends Migration
      */
     public function up()
     {
-      Schema::create('skills', function(Blueprint $skills_table) {
-        $tudors_table->increments('id');
-        $tudors_table->string('skill_name');
-        $tudors_table->string('skill_level');
+      Schema::create('skills_table', function(Blueprint $skills_table) {
+        $skills_table->increments('id');
+        $skills_table->string('skill_name');
+      });
     }
-
     /**
      * Reverse the migrations.
      *
