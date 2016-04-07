@@ -12,12 +12,15 @@ class tutorSignupController extends Controller
       return view('frontend.tutor_signup');
   }
 
-  public function gotTutors(Request $request) {
+  public function getUsers(Request $request) {
 
-    // $tutor = new tutors;
-    // $tutor->first_name = $request->first_name;
-    //
-    // $tutor->save();
+    $users = new users_table;
+    $users->first_name = $request->first_name;
+    $users->save();
+
+    return view('frontend.user_profile');
+
 }
+
 
 }

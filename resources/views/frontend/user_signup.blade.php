@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Tutor Signup Form</title>
+        <title>User Signup Form</title>
 
 
         <link href="{{{ asset('/css/foundation.css') }}}" rel="stylesheet">
@@ -46,7 +46,7 @@
 
               <br><br>
 
-              {!! Form::open(array('url' => '/tutor', 'files' => 'true')); !!}
+              {!! Form::open(array('url' => '/user_signup', 'files' => 'true')); !!}
               <div style="text-align: left">
                 <div class="small-12 columns"><h3>Personal Information</h3></div>
                 <div class="small-12 medium-6 columns">
@@ -93,11 +93,11 @@
 
                 <h3>Skill Information</h3>
                 <div class="small-12 medium-6 columns">
-                  {!! Form::label('skills_learn', 'Enter the skills you want to learn:'); !!}{!! Form::text('skills'); !!}<br>
+                  {!! Form::label('skills_learn', 'Enter the skills you want to learn:'); !!}{!! Form::text('skills_learn'); !!}<br>
                 </div>
 
                 <div class="small-12 medium-6 columns">
-                  {!! Form::label('skills_teach', 'Enter the skills are comfortable teaching:'); !!}{!! Form::text('skills'); !!}<br>
+                  {!! Form::label('skills_teach', 'Enter the skills are comfortable teaching:'); !!}{!! Form::text('skills_teach'); !!}<br>
                 </div>
 
                 <div class="small-12 columns">
@@ -113,7 +113,7 @@
                   {!! Form::label('twitter', 'Twitter:'); !!}{!! Form::text('twitter'); !!}<br>
                   {!! Form::label('instagram', 'Instagram:'); !!}{!! Form::text('instagram'); !!}<br>
                   {!! Form::label('youtube', 'Youtube:'); !!}{!! Form::text('youtube'); !!}<br>
-                  {!! Form::label('skype', 'Skype:'); !!}{!! Form::text('Skype'); !!}<br>
+                  {!! Form::label('skype', 'Skype:'); !!}{!! Form::text('skype'); !!}<br>
 
 
                   {!! Form::submit('Submit'); !!}

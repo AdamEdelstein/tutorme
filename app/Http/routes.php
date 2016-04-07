@@ -17,16 +17,22 @@ Route::get('/', function () {
 
 // tutors
 
-Route::get('tutor', 'tutorsController@index')->name('tutors');
-
-Route::post('tutor', 'tutorsController@getTutors')->name('gettutors');
+// Route::get('tutor', 'tutorsController@index')->name('tutors');
+//
+// Route::post('tutor', 'tutorsController@getTutors')->name('gettutors');
 
 // Tutor signup_user
 
-Route::get('tutor_signup', 'tutorSignupController@index')->name('tutor_signup');
+// Route::get('tutor_signup', 'tutorSignupController@index')->name('tutor_signup');
+//
+// Route::post('tutor_signup', 'tutorSignupController@gotTutors')->name('gettutor_signup');
 
-Route::post('tutor_signup', 'tutorSignupController@getTutors')->name('gettutor_signup');
 
+// User signup_user
+
+Route::get('user_signup', 'user_signupController@index')->name('user_signup');
+
+Route::post('user_signup', 'user_signupController@getUsers')->name('getuser_signup');
 
 // students
 
@@ -38,3 +44,8 @@ Route::post('tutor', 'tutorsController@getTutors')->name('gettutors');
 // Search
 
 Route::get('search', 'searchController@index')->name('search');
+
+
+// User Profile Page
+
+Route::get('user_profile', 'user_profileController@index')->name('user_profile_page');

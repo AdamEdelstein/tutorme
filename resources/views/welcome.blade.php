@@ -39,7 +39,7 @@
               <br>
 
               <div class="intro-buttons text-center">
-                  <p><a href='{{ URL::to('tutor_signup') }}' class="button large button-signup">Join Us</a></p>
+                  <p><a href='{{ URL::to('user_signup') }}' class="button large button-signup">Join Us</a></p>
               </div>
 
               <!-- Grid of Statements about us -->
