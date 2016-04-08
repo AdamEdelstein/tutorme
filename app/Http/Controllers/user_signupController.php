@@ -24,8 +24,22 @@ class user_signupController extends Controller
     $users->email = $request->email;
     $users->city = $request->city;
     $users->price = $request->price;
-    $users->online_lessons_bool = $request->online_lessons_bool;
-    $users->alt_payment_bool = $request->alt_payment_bool;
+
+//  Check to see if Checkboxes were enabled
+    if($request->online_lessons_bool == 'yes' )
+    {
+      $users->online_lessons_bool = 1;
+    } else {
+      $users->online_lessons_bool = 0;
+    }
+
+    if($request->alt_payment_bool == 'yes' )
+    {
+      $users->alt_payment_bool = 1;
+    } else {
+      $users->alt_payment_bool = 0;
+    }
+
     $users->alt_payments = $request->alt_payments;
     $users->availability = $request->availability;
     $users->skills_learn = $request->skills_learn;

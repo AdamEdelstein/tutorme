@@ -75,8 +75,8 @@
                 </div>
 
                 <div class="small-12 columns">
-                  {!! Form::checkbox('online_lessons_bool', 'online_lessons') !!}{!! Form::label('online_lessons_bool', 'Would you like to teach or learn through online tools such as Skype?') !!}<br>
-                  {!! Form::checkbox('alt_payment_bool', 'alt_payment') !!}{!! Form::label('alt_payment_bool', 'Do you
+                  {!! Form::checkbox('online_lessons_bool', 'yes', false) !!}{!! Form::label('online_lessons_bool', 'Would you like to teach or learn through online tools such as Skype?') !!}<br>
+                  {!! Form::checkbox('alt_payment_bool', 'yes', false) !!}{!! Form::label('alt_payment_bool', 'Do you
                 accept alternate forms of payment (for ex: gift-cards, 6-packs, or barter)?') !!}<br>
                 </div>
 
