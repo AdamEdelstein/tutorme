@@ -71,7 +71,7 @@
                   <br>
                   <!-- Profile Image -->
                   {!! Form::label('profile_img', 'Choose a profile image:'); !!}
-                  {!! Form::file('image'); !!}<br>
+                  {!! Form::file('profile_img'); !!}<br>
                 </div>
 
                 <div class="small-12 columns">
@@ -102,7 +102,7 @@
 
                 <div class="small-12 columns">
                   {!! Form::label('skills_media', 'Add images of your skills should you choose to do so'); !!}<br>
-                  {!! Form::file('image'); !!}<br><br>
+                  {!! Form::file('skills_imgs'); !!}<br><br>
                 </div>
 
                 <hr>
