@@ -28,12 +28,27 @@ class user_signupController extends Controller
     $users->price = $request->price;
 
     // Profile Image
-    $imageName = rand(11111,99999).'-'.$request->file('profile_img')->getClientOriginalName();
+    $p_imageName = rand(11111,99999).'-'.$request->file('profile_img')->getClientOriginalName();
 
         $request->file('profile_img')->move(
-            base_path() . '/public/uploads', $imageName
+            base_path() . '/public/uploads/profile_imgs', $p_imageName
         );
-    $users->profile_img = base_path() . '/public/uploads/' . $imageName;
+    $users->profile_img = base_path() . '/public/uploads/profile_imgs/' . $p_imageName;
+
+
+    // Skills Images
+    $s_imageName = rand(11111,99999).'-'.$request->file('skills_imgs')->getClientOriginalName();
+
+        $request->file('skills_imgs')->move(
+            base_path() . '/public/uploads/skills_imgs', $s_imageName
+        );
+    $users->skills_img = base_path() . '/public/uploads/skills_imgs/' . $s_imageName;
+
+    // $p_img = Image::make($users->profile_img);
+    // $p_img->resize(300, null, function ($constraint) {
+    //   $constraint->aspectRatio();
+    // });
+
 
     // Profile Image
     // $myFile = $request->file("profile_img")->getRealPath();
