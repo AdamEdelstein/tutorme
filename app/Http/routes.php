@@ -62,4 +62,4 @@ Route::get('user_profile', 'user_profileController@index')->name('user_profile_p
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'Controller@index');
