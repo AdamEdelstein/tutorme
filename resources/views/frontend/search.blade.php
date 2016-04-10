@@ -34,6 +34,15 @@
                 <div class="small-12 columns center-text">
                   <h1>Search for a Tutor or Student</h1>
                 </div>
+
+                {!! Form::open(array('route' => 'search’)) !!}
+                {!! Form::text('search', null,
+                array('required',
+                'class'=>'form-control',
+                'placeholder'=>'Search for a tutorial...')) !!}
+                {!! Form::submit('Search',
+                array('class'=>'btn btn-default')) !!}
+                {!! Form::close() !!}
               </div>
 
 

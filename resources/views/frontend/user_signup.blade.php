@@ -45,6 +45,8 @@
             	</ul>
 
               <br><br>
+              <input type="text">
+              <br><br>
 
               {!! Form::open(array('url' => '/user_signup', 'files' => 'true')); !!}
               <div style="text-align: left">

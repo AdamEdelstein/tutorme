@@ -40,6 +40,8 @@ Route::get('user_signup', function() {
 });
 
 
+Route::resource('search', 'searchController@index');
+
 
 
 // students
@@ -57,3 +59,7 @@ Route::get('search', 'searchController@index')->name('search');
 // User Profile Page
 
 Route::get('user_profile', 'user_profileController@index')->name('user_profile_page');
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
