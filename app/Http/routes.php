@@ -35,6 +35,10 @@ Route::get('user_signup', 'user_signupController@index')->name('user_signup');
 Route::post('user_signup', 'user_signupController@getUsers')->name('getuser_signup');
 
 
+Route::get('edit_profile', 'edit_profileController@index')->name('user_signup');
+
+Route::post('edit_profile', 'edit_profileController@getUsers')->name('getuser_signup');
+
 Route::get('user_signup', function() {
   return View::make('frontend.user_signup');
 });

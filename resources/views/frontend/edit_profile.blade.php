@@ -31,39 +31,31 @@
             <div class="small-12 medium-8 columns">
 
               <br><br>
-              <h1>Tell us a little more about yourself:</h1>
+              <h1>Edit your Profile:</h1>
 
               <br><br>
 
-              {!! Form::open(array('url' => '/user_signup', 'files' => 'true')); !!}
+              {!! Form::open(array('url' => '/user_signup', 'files' => 'true', 'method' => 'post')); !!}
               <div style="text-align: left">
-                <div class="small-12 columns"><h3>Personal Information</h3></div>
-                <div class="small-12 medium-6 columns">
-                  {!! Form::label('first_name', 'First Name:'); !!}{!! Form::text('first_name'); !!}<br>
-                </div>
-                <div class="small-12 medium-6 columns">
-                  {!! Form::label('last_name', 'Last Name:'); !!}{!! Form::text('last_name'); !!}<br>
+                <div class="small-12 columns"><h3>Tell us more about yourself <strong><?php echo Auth::user()->name; ?></strong>.</h3></div>
+
+
+                <div class="small-12 medium-6 columns bump20">
+                  {!! Form::label('city', 'What city are you interested in?'); !!}{!! Form::text('city'); !!}<br>
                 </div>
 
-                <div class="small-12 medium-6 columns">
-                  {!! Form::label('email', 'Email Address:'); !!}{!! Form::text('email'); !!}<br>
-                </div>
-                <div class="small-12 medium-6 columns">
-                  {!! Form::label('city', 'City:'); !!}{!! Form::text('city'); !!}<br>
-                </div>
-
-                <div class="small-12 medium-6 columns">
-                  {!! Form::label('price', 'Dollar Price per hour:'); !!}{!! Form::text('price'); !!}<br>
+                <div class="small-12 medium-6 columns bump20">
+                  {!! Form::label('price', 'What is the price range you are looking for?'); !!}{!! Form::text('price'); !!}<br>
                 </div>
 
                 <div class="small-12 medium-6 columns">
                   <br>
                   <!-- Profile Image -->
-                  {!! Form::label('profile_img', 'Choose a profile image:'); !!}
+                  <h3>{!! Form::label('profile_img', 'Choose a profile image:'); !!}</h3>
                   {!! Form::file('profile_img'); !!}<br>
                 </div>
 
-                <div class="small-12 columns">
+                <div class="small-12 columns bump30">
                   {!! Form::checkbox('online_lessons_bool', 'yes', false) !!}{!! Form::label('online_lessons_bool', 'Would you like to teach or learn through online tools such as Skype?') !!}<br>
                   {!! Form::checkbox('alt_payment_bool', 'yes', false) !!}{!! Form::label('alt_payment_bool', 'Do you
                 accept alternate forms of payment (for ex: gift-cards, 6-packs, or barter)?') !!}<br>

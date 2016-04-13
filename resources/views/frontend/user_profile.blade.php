@@ -33,6 +33,13 @@
               <div class="row">
                 <div class="small-12 columns center-text">
                   <h1>User Profile Page</h1>
+
+                  <form action="/edit_profile">
+                      <input type="submit" value="Edit Profile">
+                  </form>
+
+                Name: <?php echo Auth::user()->name; ?> <br>
+                Email: <?php echo Auth::user()->email; ?>
                 </div>
               </div>
 

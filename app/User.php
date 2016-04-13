@@ -12,7 +12,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'city',
+        //
+        // 'first_name', 'last_name', 'city', 'price',
+        // 'p_imageName', 's_imageName', 'online_lessons_bool', 'alt_payment_bool',
+        // 'alt_payments', 'availability', 'skills_learn', 'skills_teach',
+        // 'facebook', 'instagram', 'twitter', 'youtube', 'skype',
     ];
 
     /**

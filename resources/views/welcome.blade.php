@@ -25,7 +25,7 @@
                   <li><a href="#news">About</a></li>
                   <li><a href="#contact">Search</a></li>
                   <li><a href="#contact">Join</a></li>
-                  <li style="float:right"><a class="active" href="#about">Login</a></li>
+                  <li style="float:right"><a class="active" href="/login">Login</a></li>
                 </ul>
 
                 {!! Html::image('img/pages/welcome/sky-intro.png') !!}
@@ -39,7 +39,7 @@
               <br>
 
               <div class="intro-buttons text-center">
-                  <p><a href='{{ URL::to('user_signup') }}' class="button large button-signup">Join Us</a></p>
+                  <p><a href='{{ URL::to('/register') }}' class="button large button-signup">Join Us</a></p>
               </div>
 
               <!-- Grid of Statements about us -->

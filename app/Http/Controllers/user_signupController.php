@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use DB;
-use App\users_table;
+use App\users;
 use Storage;
 use Illuminate\Support\Facades\File;
 
@@ -20,7 +20,7 @@ class user_signupController extends Controller
   public function getUsers(Request $request) {
 
     // Writing information from the user_signup form to the users_table model
-    $users = new users_table;
+    $users = new users;
     $users->first_name = $request->first_name;
     $users->last_name = $request->last_name;
     $users->email = $request->email;
