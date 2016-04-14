@@ -6,21 +6,90 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use DB;
-use App\users;
+use App\User;
 use Storage;
 use Illuminate\Support\Facades\File;
+use Auth;
 
 
 class edit_profileController extends Controller
 {
+
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+
   public function index() {
       return view('frontend.edit_profile');
   }
 
+
   public function getUsers(Request $request) {
 
     // Writing information from the user_signup form to the users_table model
-      $data['city'] = $request->city;
+/*    DB::table('users')
+            ->where('id', Auth::user()->id)
+            ->update(array(
+              'city' => $request->city,
+            ));
+*/
+  $user = User::find(Auth::user()->id);
+  $user->city = $request->city;
+  $user->first_name = $request->first_name;
+
+  $user->last_name = $request->last_name;
+  $user->email = $request->email;
+  $user->city = $request->city;
+  $user->price = $request->price;
+
+  // Profile Image
+  $p_imageName = rand(11111,99999).'-'.$request->file('profile_img')->getClientOriginalName();
+
+      $request->file('profile_img')->move(
+          base_path() . '/public/uploads/profile_imgs', $p_imageName
+      );
+  $user->profile_img = base_path() . '/public/uploads/profile_imgs/' . $p_imageName;
+
+
+  // Skills Images
+  $s_imageName = rand(11111,99999).'-'.$request->file('skills_imgs')->getClientOriginalName();
+
+      $request->file('skills_imgs')->move(
+          base_path() . '/public/uploads/skills_imgs', $s_imageName
+      );
+  $user->skills_img = base_path() . '/public/uploads/skills_imgs/' . $s_imageName;
+
+
+
+  if($request->online_lessons_bool == 'yes' )
+  {
+    $user->online_lessons_bool = 1;
+  } else {
+    $user->online_lessons_bool = 0;
+  }
+
+  if($request->alt_payment_bool == 'yes' )
+  {
+    $user->alt_payment_bool = 1;
+  } else {
+    $user->alt_payment_bool = 0;
+  }
+
+  $user->alt_payments = $request->alt_payments;
+  $user->availability = $request->availability;
+  $user->skills_learn = $request->skills_learn;
+  $user->skills_teach = $request->skills_teach;
+  $user->facebook = $request->facebook;
+  $user->instagram = $request->instagram;
+  $user->twitter = $request->twitter;
+  $user->youtube = $request->youtube;
+  $user->skype = $request->skype;
+
+
+  $user->save();
+
+      // $data['city'] = $request->city;
     // $users->last_name = $request->last_name;
     // $users->email = $request->email;
     // $users->city = $request->city;
@@ -80,7 +149,7 @@ class edit_profileController extends Controller
     // $users->twitter = $request->twitter;
     // $users->youtube = $request->youtube;
     // $users->skype = $request->skype;
-    $users->save();
+//    $users->save();
 
     return view('frontend.edit_profile');
 

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Tutor Me</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -15,17 +14,15 @@
 
 
 
-
-
     </head>
     <body>
         <div class="container">
             <div class="content">
 
               <ul>
-                <li><a class="active" href="/">Home</a></li>
+                <li><a class="active" href="#home">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="{{ url('/search') }}">Search</a></li>
+                <li><a href="#">Search</a></li>
                 <li><a href="{{ url('/register') }}">Join</a></li>
 
                 @if (Auth::guest())
@@ -46,18 +43,7 @@
               @endif
 
 
-              <div class="row">
-                <div class="small-12 columns center-text">
-                  <h1>User Profile Page</h1>
 
-                  <form action="/edit_profile">
-                      <input type="submit" value="Edit Profile">
-                  </form>
-
-                Name: <?php echo Auth::user()->name; ?> <br>
-                Email: <?php echo Auth::user()->email; ?>
-                </div>
-              </div>
 
 
             </div>

@@ -18,16 +18,31 @@
         <div class="container">
             <div class="content">
 
+              <ul>
+                <li><a class="active" href="/">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="{{ url('/search') }}">Search</a></li>
+                <li><a href="{{ url('/register') }}">Join</a></li>
+
+                @if (Auth::guest())
+                <li class="dropdown" style="float:right">
+                  <a href="{{ url('/login') }}" class="dropbtn">Login</a>
+                  <div class="dropdown-content">
+                    <a href="{{ url('/register') }}">Register</a>
+                  </div>
+                </li>
+                @else
+                <li class="dropdown" style="float:right">
+                  <a href="{{ url('/user_profile') }}" class="dropbtn">{{ Auth::user()->name }}</a>
+                  <div class="dropdown-content">
+                    <a href="{{ url('/logout') }}">Logout</a>
+                  </div>
+                </li>
+              </ul>
+              @endif
+
               <!-- Splash Image and Intro Text -->
               <div class="splash-img">
-                <ul>
-                  <li><a href="#home">Home</a></li>
-                  <li><a href="#news">About</a></li>
-                  <li><a href="#contact">Search</a></li>
-                  <li><a href="#contact">Join</a></li>
-                  <li style="float:right"><a class="active" href="/login">Login</a></li>
-                </ul>
-
                 {!! Html::image('img/pages/welcome/sky-intro.png') !!}
               </div>
 

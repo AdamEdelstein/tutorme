@@ -17,13 +17,28 @@
       <div class="container">
         <div class="content">
 
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#news">About</a></li>
-              <li><a href="#contact">Search</a></li>
-              <li><a href="#contact">Join</a></li>
-              <li style="float:right"><a class="active" href="#about">Login</a></li>
-            </ul>
+          <ul>
+            <li><a class="active" href="/">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="{{ url('/search') }}">Search</a></li>
+            <li><a href="{{ url('/register') }}">Join</a></li>
+
+            @if (Auth::guest())
+            <li class="dropdown" style="float:right">
+              <a href="{{ url('/login') }}" class="dropbtn">Login</a>
+              <div class="dropdown-content">
+                <a href="{{ url('/register') }}">Register</a>
+              </div>
+            </li>
+            @else
+            <li class="dropdown" style="float:right">
+              <a href="{{ url('/user_profile') }}" class="dropbtn">{{ Auth::user()->name }}</a>
+              <div class="dropdown-content">
+                <a href="{{ url('/logout') }}">Logout</a>
+              </div>
+            </li>
+          </ul>
+          @endif
 
           </div>
 
@@ -35,7 +50,7 @@
 
               <br><br>
 
-              {!! Form::open(array('url' => '/user_signup', 'files' => 'true', 'method' => 'post')); !!}
+              {!! Form::open(array('url' => '/edit_profile', 'files' => 'true', 'method' => 'post')); !!}
               <div style="text-align: left">
                 <div class="small-12 columns"><h3>Tell us more about yourself <strong><?php echo Auth::user()->name; ?></strong>.</h3></div>
 

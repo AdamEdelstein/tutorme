@@ -14,21 +14,47 @@ li {
     float: left;
 }
 
-li a {
-    display: block;
+li a, .dropbtn {
+    display: inline-block;
     color: white;
     text-align: center;
-    padding: 16px 22px;
+    padding: 14px 20px 14px 20px;
     text-decoration: none;
+
 }
 
-li a:hover:not(.active) {
-    background-color: #111;
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #2199e8;
+    color: white;
 }
 
-.active {
-    background-color: #333;
+li.dropdown {
+    display: inline-block;
 }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 12px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #2199e8; color: white;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    margin-right: 20%;
+}
+
 
 /*Main Homepage*/
 .intro-text {
