@@ -36,11 +36,6 @@ class edit_profileController extends Controller
 */
   $user = User::find(Auth::user()->id);
   $user->city = $request->city;
-  $user->first_name = $request->first_name;
-
-  $user->last_name = $request->last_name;
-  $user->email = $request->email;
-  $user->city = $request->city;
   $user->price = $request->price;
 
   // Profile Image
@@ -89,69 +84,8 @@ class edit_profileController extends Controller
 
   $user->save();
 
-      // $data['city'] = $request->city;
-    // $users->last_name = $request->last_name;
-    // $users->email = $request->email;
-    // $users->city = $request->city;
-    // $users->price = $request->price;
-    //
-    // // Profile Image
-    // $p_imageName = rand(11111,99999).'-'.$request->file('profile_img')->getClientOriginalName();
-    //
-    //     $request->file('profile_img')->move(
-    //         base_path() . '/public/uploads/profile_imgs', $p_imageName
-    //     );
-    // $users->profile_img = base_path() . '/public/uploads/profile_imgs/' . $p_imageName;
-    //
-    //
-    // // Skills Images
-    // $s_imageName = rand(11111,99999).'-'.$request->file('skills_imgs')->getClientOriginalName();
-    //
-    //     $request->file('skills_imgs')->move(
-    //         base_path() . '/public/uploads/skills_imgs', $s_imageName
-    //     );
-    // $users->skills_img = base_path() . '/public/uploads/skills_imgs/' . $s_imageName;
-    //
-    // // $p_img = Image::make($users->profile_img);
-    // // $p_img->resize(300, null, function ($constraint) {
-    // //   $constraint->aspectRatio();
-    // // });
-    //
-    //
-    // // Profile Image
-    // // $myFile = $request->file("profile_img")->getRealPath();
-    // // $fileToMove = file_get_contents($myFile);
-    // //
-    // // Storage::put($fileToMove, public_path("uploads"));
-    //
-    //
-    // //  Check to see if Checkboxes were enabled
-    // if($request->online_lessons_bool == 'yes' )
-    // {
-    //   $users->online_lessons_bool = 1;
-    // } else {
-    //   $users->online_lessons_bool = 0;
-    // }
-    //
-    // if($request->alt_payment_bool == 'yes' )
-    // {
-    //   $users->alt_payment_bool = 1;
-    // } else {
-    //   $users->alt_payment_bool = 0;
-    // }
-    //
-    // $users->alt_payments = $request->alt_payments;
-    // $users->availability = $request->availability;
-    // $users->skills_learn = $request->skills_learn;
-    // $users->skills_teach = $request->skills_teach;
-    // $users->facebook = $request->facebook;
-    // $users->instagram = $request->instagram;
-    // $users->twitter = $request->twitter;
-    // $users->youtube = $request->youtube;
-    // $users->skype = $request->skype;
-//    $users->save();
 
-    return view('frontend.edit_profile');
+  return view('frontend.user_profile');
 
 }
 

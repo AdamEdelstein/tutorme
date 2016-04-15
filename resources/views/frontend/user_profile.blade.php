@@ -23,7 +23,7 @@
             <div class="content">
 
               <ul>
-                <li><a class="active" href="/">Home</a></li>
+                <li><a class="active" href="{{ url('/') }}">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="{{ url('/search') }}">Search</a></li>
                 <li><a href="{{ url('/register') }}">Join</a></li>
@@ -46,16 +46,75 @@
               @endif
 
 
-              <div class="row">
-                <div class="small-12 columns center-text">
-                  <h1>User Profile Page</h1>
+              <div class="row bump50">
+                <div class="small-12 medium-4 columns center-text">
+                  <img src="<?php echo Auth::user()->profile_img?>')"><br>
+                  {{ Auth::user()->name }}<br>
+                  {{ Auth::user()->city }}<br>
+                  {{ Auth::user()->email }}<br><br>
 
-                  <form action="/edit_profile">
-                      <input type="submit" value="Edit Profile">
-                  </form>
 
-                Name: <?php echo Auth::user()->name; ?> <br>
-                Email: <?php echo Auth::user()->email; ?>
+                  <!-- Checks for Social Media -->
+                  <?php if (Auth::user()->facebook): ?>
+                    <a href="#"> {{ Auth::user()->facebook }} </a><br>
+                  <?php endif; ?>
+
+                  <?php if (Auth::user()->twitter): ?>
+                    <a href="#"> {{ Auth::user()->twitter }} </a><br>
+                  <?php endif; ?>
+
+                  <?php if (Auth::user()->instagram): ?>
+                    <a href="#"> {{ Auth::user()->instagram }} </a><br>
+                  <?php endif; ?>
+
+                  <?php if (Auth::user()->youtube): ?>
+                    <a href="#"> {{ Auth::user()->youtube }} </a><br>
+                  <?php endif; ?>
+
+                  <?php if (Auth::user()->skype): ?>
+                    <a href="#"> {{ Auth::user()->skype }} </a><br>
+                  <?php endif; ?>
+
+                </div>
+
+                <div class="small-12 medium-8 columns">
+
+                  <?php
+                    if (Auth::user()->skills_learn == null) {
+                      echo 'I have nothing to learn<br><br>';
+                    } else {
+                      echo 'Skills to learn:'.' <strong><em>'.Auth::user()->skills_learn.'</strong></em><br><br>';
+                    }
+                  ?>
+
+                  <?php
+                    if (Auth::user()->skills_learn == null) {
+                      echo 'I have nothing to teach<br><br>';
+                    } else {
+                      echo 'Skills to teach:'.' <strong><em>'.Auth::user()->skills_teach.'</strong></em><br><br>';
+                    }
+                  ?>
+
+
+                  <?php
+                    if (Auth::user()->alt_payment_bool == 1) {
+                      echo 'Alternate payment types accepted<br>';
+                      echo 'Payment Types Accepted:'.' '.Auth::user()->alt_payments;
+                    } else {
+                      echo 'Alternate payment types NOT accepted<br>';
+                    }
+                  ?>
+                  <br><br>
+                  <?php
+                    if(Auth::user()->online_lessons_bool == 1) {
+                      echo 'Online learning available<br>';
+                    } else {
+                      echo 'Face to Face learning only<br>';
+                    }
+                  ?>
+                  <br>
+                  I am available during these times: {{ Auth::user()->availability }}<br>
+
                 </div>
               </div>
 

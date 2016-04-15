@@ -60,10 +60,18 @@ Route::post('tutor', 'tutorsController@getTutors')->name('gettutors');
 
 Route::get('search', 'searchController@index')->name('search');
 
+Route::post('search', 'searchController@getSearch')->name('getsearch');
+
+
 
 // User Profile Page
 
 Route::get('user_profile', 'user_profileController@index')->name('user_profile_page');
+
+
+// User Prompt
+Route::get('user_prompt', 'user_promptController@index')->name('user_prompt_page');
+
 
 Route::auth();
 

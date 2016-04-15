@@ -15,13 +15,15 @@
 
 
 
+
+
     </head>
     <body>
         <div class="container">
             <div class="content">
 
               <ul>
-                <li><a class="active" href="/">Home</a></li>
+                <li><a class="active" href="{{ url('/') }}">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="{{ url('/search') }}">Search</a></li>
                 <li><a href="{{ url('/register') }}">Join</a></li>
@@ -44,22 +46,15 @@
               @endif
 
 
-
               <div class="row">
-                <div class="small-12 columns center-text">
-                  <h1>Search for a Tutor or Student</h1>
-                </div>
+                <div class="small-12 columns center-text user-prompt">
 
-                <div class="small-12 medium-6 columns bump20">
-                {!! Form::open(array('url' => '/search', 'method' => 'post')); !!}
-                  {!! Form::label('search', 'search'); !!}{!! Form::text('search'); !!}<br>
-                {!! Form::close(); !!}
 
-                <?php if (isset($articles)) { ?>
-
-                {!! var_dump($articles) !!}
-
-                <?php } ?>
+                <h2 class="bump50">Hey <?php echo Auth::user()->name; ?>, <br></h2>
+                I noticed you haven't made a profile yet, would you like to make one?<br>
+                Or you can jump right in and start searching for tutors or students.<br><br>
+                <a href="{{ url('/edit_profile') }}" class="button">Edit Profile</a>
+                <a href="{{ url('/search') }}" class="button">Search</a>
 
                 </div>
               </div>

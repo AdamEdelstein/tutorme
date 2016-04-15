@@ -102,23 +102,24 @@
                 </div>
 
                 <hr>
-
-                <div class="small-12 medium-8 columns" style="width: 50%; float: left;">
                 <h3>Social Media</h3>
+
+                <div class="small-12 medium-6 columns">
                   {!! Form::label('facebook', 'Facebook:'); !!}{!! Form::text('facebook'); !!}<br>
                   {!! Form::label('twitter', 'Twitter:'); !!}{!! Form::text('twitter'); !!}<br>
                   {!! Form::label('instagram', 'Instagram:'); !!}{!! Form::text('instagram'); !!}<br>
+                </div>
+                <div class="small-12 medium-6 columns">
                   {!! Form::label('youtube', 'Youtube:'); !!}{!! Form::text('youtube'); !!}<br>
                   {!! Form::label('skype', 'Skype:'); !!}{!! Form::text('skype'); !!}<br>
-
-
-                  {!! Form::submit('Submit'); !!}
-
                 </div>
 
+                  <div class="small-12 columns">
+                {!! Form::submit('Submit'); !!}
+              </div>
 
-
-              {!! Form::close() !!}
+          </div>
+              {!! Form::close(); !!}
 
             </div>
           </div>
