@@ -46,9 +46,9 @@
               @endif
 
 
-              <div class="row bump50">
+              <div class="row bump50 main-content user-profile-card">
                 <div class="small-12 medium-4 columns center-text">
-                  <img src="<?php echo Auth::user()->profile_img?>')"><br>
+                  <img class="thumbnail" src="<?php echo Auth::user()->profile_img?>"><br>
                   {{ Auth::user()->name }}<br>
                   {{ Auth::user()->city }}<br>
                   {{ Auth::user()->email }}<br><br>
@@ -116,6 +116,9 @@
                   I am available during these times: {{ Auth::user()->availability }}<br>
 
                 </div>
+
+                <img src="<?php echo Auth::user()->skills_img?>"><br>
+
               </div>
 
 

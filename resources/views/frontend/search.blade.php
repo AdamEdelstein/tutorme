@@ -49,20 +49,24 @@
                 <div class="small-12 columns center-text">
                   <h1>Search for a Tutor or Student</h1>
                 </div>
+              </div>
 
-                <div class="small-12 medium-6 columns bump20">
+
+                <div class="text-center large-centered search-field bump50">
                 {!! Form::open(array('url' => '/search', 'method' => 'post')); !!}
                   {!! Form::label('search', 'search'); !!}{!! Form::text('search'); !!}<br>
                 {!! Form::close(); !!}
+                </div>
 
+              <div class="small-12 columns bump20">
                 <?php if (isset($articles)) { ?>
 
                 {!! var_dump($articles) !!}
 
                 <?php } ?>
-
-                </div>
               </div>
+
+            </div>
 
 
             </div>

@@ -39,23 +39,23 @@ class edit_profileController extends Controller
   $user->price = $request->price;
 
   // Profile Image
+  if($request->file('profile_img') !== null){
   $p_imageName = rand(11111,99999).'-'.$request->file('profile_img')->getClientOriginalName();
 
-      $request->file('profile_img')->move(
-          base_path() . '/public/uploads/profile_imgs', $p_imageName
-      );
-  $user->profile_img = base_path() . '/public/uploads/profile_imgs/' . $p_imageName;
+      $request->file('profile_img')->move(public_path('uploads/profile_imgs'), $p_imageName);
 
+  $user->profile_img = '/uploads/profile_imgs/' .  $p_imageName;
+  }
 
   // Skills Images
+  if($request->file('skills_imgs') !== null) {
   $s_imageName = rand(11111,99999).'-'.$request->file('skills_imgs')->getClientOriginalName();
 
-      $request->file('skills_imgs')->move(
-          base_path() . '/public/uploads/skills_imgs', $s_imageName
-      );
-  $user->skills_img = base_path() . '/public/uploads/skills_imgs/' . $s_imageName;
+      $request->file('skills_imgs')->move(public_path('uploads/skills_imgs'), $s_imageName);
 
+  $user->skills_img = '/uploads/skills_imgs/' . $s_imageName;
 
+}
 
   if($request->online_lessons_bool == 'yes' )
   {
