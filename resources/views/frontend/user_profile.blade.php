@@ -56,25 +56,26 @@
 
                   <!-- Checks for Social Media -->
                   <?php if (Auth::user()->facebook): ?>
-                    <a href="#"> {{ Auth::user()->facebook }} </a><br>
+                    <a href="{{ Auth::user()->facebook }}">Facebook</a><br>
                   <?php endif; ?>
 
                   <?php if (Auth::user()->twitter): ?>
-                    <a href="#"> {{ Auth::user()->twitter }} </a><br>
+                    <a href="{{ Auth::user()->twitter }}">Twitter</a><br>
                   <?php endif; ?>
 
                   <?php if (Auth::user()->instagram): ?>
-                    <a href="#"> {{ Auth::user()->instagram }} </a><br>
+                    <a href="{{ Auth::user()->instagram }}">Instagram</a><br>
                   <?php endif; ?>
 
                   <?php if (Auth::user()->youtube): ?>
-                    <a href="#"> {{ Auth::user()->youtube }} </a><br>
+                    <a href="{{ Auth::user()->youtube }}">YouTube</a><br>
                   <?php endif; ?>
 
                   <?php if (Auth::user()->skype): ?>
-                    <a href="#"> {{ Auth::user()->skype }} </a><br>
+                    <a href="{{ Auth::user()->skype }}">Skype</a><br>
                   <?php endif; ?>
 
+                  <p><a href='{{ URL::to('/edit_profile') }}' class="button medium button-signup">Edit Profile</a></p>
                 </div>
 
                 <div class="small-12 medium-8 columns">
@@ -116,8 +117,15 @@
                   I am available during these times: {{ Auth::user()->availability }}<br>
 
                 </div>
+                <br><br>
+                <hr class="bump20">
+                <div class="row">
+                  <div class="small-12 medium-8 medium-centered large-centered columns bump50">
+                    <h3>Pictures of my skills:<br></h3>
 
-                <img src="<?php echo Auth::user()->skills_img?>"><br>
+                    <img src="<?php echo Auth::user()->skills_img ?>"><br>
+                  </div>
+                </div>
 
               </div>
 

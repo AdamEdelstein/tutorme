@@ -10,7 +10,11 @@ use App\User;
 use Storage;
 use Illuminate\Support\Facades\File;
 use Auth;
-use Intervention\Image\ImageManagerStatic as Image;
+use Image;
+use Validator;
+use Session;
+use Redirect;
+
 
 
 class edit_profileController extends Controller
@@ -24,7 +28,6 @@ class edit_profileController extends Controller
   public function index() {
       return view('frontend.edit_profile');
   }
-
 
   public function getUsers(Request $request) {
 
@@ -40,17 +43,46 @@ class edit_profileController extends Controller
   $user->price = $request->price;
 
   // Profile Image
-  if($request->file('profile_img') !== null){
+  if($request->file('profile_img') !== null) {
+
+      $p_img = $request->file('profile_img');
+          // $img = Image::make($p_img);
+          // $img->resize(300, 200);
+      $p_imageName = rand(11111,99999).'-'.$p_img->getClientOriginalName();
+      $p_img->move(public_path('uploads/profile_imgs'), $p_imageName);
+      $user->profile_img = '/uploads/profile_imgs/' .  $p_imageName;
+    }
+
+    //-----Skills Imgs-----
+
+    // // getting all of the post data
+    // $files = $request->file('skills_imgs');
+    // // Making counting of uploaded images
+    // $file_count = count($files);
+    // // start count how many uploaded
+    // $uploadcount = 0;
+    // foreach($files as $file) {
+    //   $rules = array('file' => 'required'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
+    //   $validator = Validator::make(array('file'=> $file), $rules);
+    //   if($validator->passes()){
+    //     $destinationPath = 'uploads/skills_imgs';
+    //     $filename = rand(11111,99999).'-'.$file->getClientOriginalName();
+    //     $upload_success = $file->move($destinationPath, $filename);
+    //     $user->skills_img = $filename;
+    //     $uploadcount ++;
+    //   }
+    // }
+    //
+    // if($uploadcount == $file_count){
+    //   Session::flash('success', 'Upload successfully');
+    //   return Redirect::to('user_profile');
+    // }
+    // else {
+    //   return Redirect::to('edit_profile')->withInput()->withErrors($validator);
+    // }
 
 
-  $p_imageName = rand(11111,99999).'-'.$request->file('profile_img')->getClientOriginalName();
 
-      $request->file('profile_img')->move(public_path('uploads/profile_imgs'), $p_imageName);
-
-  $user->profile_img = '/uploads/profile_imgs/' .  $p_imageName;
-
-
-  }
 
   // Skills Images
   if($request->file('skills_imgs') !== null) {
@@ -59,8 +91,9 @@ class edit_profileController extends Controller
       $request->file('skills_imgs')->move(public_path('uploads/skills_imgs'), $s_imageName);
 
   $user->skills_img = '/uploads/skills_imgs/' . $s_imageName;
+  }
 
-}
+//}
 
   if($request->online_lessons_bool == 'yes' )
   {
@@ -92,38 +125,5 @@ class edit_profileController extends Controller
 
   return view('frontend.user_profile');
 
-}
-
-public function upload() {
-
-
-
-  // // getting all of the post data
-  // $file = array('profile_image' => Input::file('profile_image');
-  // // setting up rules
-  // $rules = array('profile_image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
-  // // doing the validation, passing post data, rules and the messages
-  // $validator = Validator::make($file, $rules);
-  // if ($validator->fails()) {
-  //   // send back to the page with the input data and errors
-  //   return Redirect::to('user_signup')->withInput()->withErrors($validator);
-  // }
-  // else {
-  //   // checking file is valid.
-  //   if (Input::file('profile_image')->isValid()) {
-  //     $destinationPath = public_path("uploads"); // upload path
-  //     $extension = Input::file('profile_image')->getClientOriginalExtension(); // getting image extension
-  //     $fileName = rand(11111,99999).'.'.$extension; // renameing image
-  //     Input::file('profile_image')->move($destinationPath, $fileName); // uploading file to given path
-  //     // sending back with message
-  //     Session::flash('success', 'Upload successfully');
-  //     return Redirect::to('user_signup');
-  //   }
-  //   else {
-  //     // sending back with error message.
-  //     Session::flash('error', 'uploaded file is not valid');
-  //     return Redirect::to('user_signup');
-  //   }
-  // }
 }
 }
