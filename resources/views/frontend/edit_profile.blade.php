@@ -71,11 +71,11 @@
         <div class="small-12 columns">
           {!! Form::checkbox('online_lessons_bool', 'yes', false) !!}{!! Form::label('online_lessons_bool', 'Would you like to teach or learn through online tools such as Skype?') !!}<br>
           {!! Form::checkbox('alt_payment_bool', 'yes', false) !!}{!! Form::label('alt_payment_bool', 'Do you
-          accept alternate forms of payment (for ex: gift-cards, 6-packs, or barter)?') !!}<br>
+          accept alternate forms of payment (for ex: gift-cards, 6-packs, or barter)?') !!}
         </div>
 
         <div class="small-12 medium-6 columns bump20">
-          {!! Form::label('alt_payments', 'If you accept alternate payments, what items would you prefer?'); !!}{!! Form::text('alt_payments'); !!}<br>
+          {!! Form::label('alt_payments', 'What items do you prefer for alternate payments?'); !!}{!! Form::text('alt_payments'); !!}<br>
         </div>
 
         <div class="small-12 medium-6 columns bump20">

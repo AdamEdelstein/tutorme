@@ -10,6 +10,7 @@ use App\User;
 use Storage;
 use Illuminate\Support\Facades\File;
 use Auth;
+use Intervention\Image\ImageManagerStatic as Image;
 
 
 class edit_profileController extends Controller
@@ -40,11 +41,15 @@ class edit_profileController extends Controller
 
   // Profile Image
   if($request->file('profile_img') !== null){
+
+
   $p_imageName = rand(11111,99999).'-'.$request->file('profile_img')->getClientOriginalName();
 
       $request->file('profile_img')->move(public_path('uploads/profile_imgs'), $p_imageName);
 
   $user->profile_img = '/uploads/profile_imgs/' .  $p_imageName;
+
+
   }
 
   // Skills Images
