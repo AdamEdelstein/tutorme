@@ -51,7 +51,7 @@
 
               <div class="row bump50 main-content user-profile-card">
                 <div class="small-12 medium-4 columns text-center left-user-profile">
-                  <img class="thumbnail" src="<?php echo Auth::user()->profile_img?>"><br><br>
+                  <img class="picture-border" src="<?php echo Auth::user()->profile_img?>"><br><br>
                   {{ Auth::user()->name }}<br>
                   {{ Auth::user()->city }}<br>
                   {{ Auth::user()->email }}<br>
@@ -101,6 +101,11 @@
                     }
                   ?>
 
+                  <?php
+                    if (Auth::user()->price != null) {
+                      echo 'I charge'.' '.Auth::user()->price.' an hour<br><br>';
+                    }
+                  ?>
 
                   <?php
                     if (Auth::user()->alt_payment_bool == 1) {
@@ -128,7 +133,7 @@
                   <div class="small-12 medium-8 medium-centered large-centered columns bump50">
                     <h3>Pictures of my skills:<br></h3>
 
-                    <img src="<?php echo Auth::user()->skills_img ?>"><br>
+                    <img class="picture-border" src="<?php echo Auth::user()->skills_img ?>"><br>
                   </div>
                 </div>
 

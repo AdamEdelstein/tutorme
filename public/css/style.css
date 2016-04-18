@@ -48,7 +48,7 @@ li.dropdown {
     text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #2199e8; color: white;}
+.dropdown-content a:hover {background-color: #2099e8; color: white;}
 
 .dropdown:hover .dropdown-content {
     display: block;
@@ -173,6 +173,12 @@ form input[type="label"] {
 
 
 /* Bump Helpers */
+
+.picture-border {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #2099e8;
+}
 
 .bump10 {
   margin-top: 10px;

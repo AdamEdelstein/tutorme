@@ -74,7 +74,7 @@
                   <div class="small-12 columns large-centered medium-centered">
 
                       <div class="small-4 columns bump20 search-results-left">
-                        <img class="thumbnail" src="<?php echo $articles[$i]->profile_img ?>">
+                        <img class="picture-border" src="<?php echo $articles[$i]->profile_img ?>">
                         <br><br>
 
                         <?php if ($articles[$i]->facebook): ?>
@@ -121,6 +121,13 @@
                             echo 'Skills to teach:'.' <strong><em>'.$articles[$i]->skills_teach.'</strong></em><br><br>';
                           }
                         ?>
+
+                        <?php
+                          if ($articles[$i]->price != null) {
+                            echo 'I charge'.' '.$articles[$i]->price.' an hour<br><br>';
+                          }
+                        ?>
+
                       </div>
                       <div class="small-6 columns">
                         <?php
