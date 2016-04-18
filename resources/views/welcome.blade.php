@@ -85,30 +85,33 @@
                 <div class="row">
                 <div class="section-title"><h2>Check out our 3 Newest Tutors!</h2>
                   <br><br>
-                  <div class="small-12 medium-4 columns">
+
+                    <?php
+                      $getLatestUsers = DB::table('users')->orderBy('created_at','desc')->take(3)->get();
+
+                      $i = 0;
+                      while($i < 3) {
+                    ?>
+                    <div class="small-12 medium-4 columns">
+
+                    <?php echo $getLatestUsers[$i]->name; ?>
                     <h2>Tutor1 (IMG)</h2>
-                    Name: Jordan Menendez<br>
-                    Price: 20$ an hour<br>
-                    Alt Payments?: Yes! <br>
-                    Skills: Water Polo, Glass Blowing, Camping, Manual Transmission<br>
+                    Name: <?php echo $getLatestUsers[$i]->name; ?><br>
+                    Price: <?php echo $getLatestUsers[$i]->price; ?> an hour<br>
+                    Alt Payments?: <?php
+                                        if ($getLatestUsers[$i]->online_lessons_bool == 1) {
+                                          echo 'Yes!';
+                                        } else {
+                                          echo 'No';
+                                        }
+                                    ?> <br>
+                    Skills to teach: <?php echo $getLatestUsers[$i]->skills_teach ?><br>
+                    Skills to learn: <?php echo $getLatestUsers[$i]->skills_learn ?><br>
                   </div>
-
-                  <div class="small-12 medium-4 columns">
-                    <h2>Tutor2 (IMG)</h2>
-                    Name: Jason Jordan<br>
-                    Price: 40$ an hour<br>
-                    Alt Payments?: No <br>
-                    Skills: C++, Javascript, Laravel, PHP<br>
+                  <?php $i++; } ?>
                   </div>
-
-                  <div class="small-12 medium-4 columns">
-                    <h2>Tutor3 (IMG)</h2>
-                    Name: Megan Guston<br>
-                    Price: Anything<br>
-                    Alt Payments?: Yes! <br>
-                    Skills: Painting, Mongolian Chants, Candle Making, Gluten-Free Cooking<br>
-                  </div>
-                  </div>
+                </div>
+                </div>
                 </div>
             </div>
 

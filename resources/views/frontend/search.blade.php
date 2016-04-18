@@ -8,6 +8,8 @@
 
                 <link href="{{{ asset('/css/foundation.css') }}}" rel="stylesheet">
                 <link href="{{{ asset('/css/style.css') }}}" rel="stylesheet">
+                <link href="{{{ asset('/css/search_results.css') }}}" rel="stylesheet">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
                 <script type="text/javascript" src='//code.jquery.com/jquery-1.10.2.min.js'></script>
                 <script type="text/javascript" src='{{ url("/selectize/dist/js/standalone/selectize.min.js") }}'></script>
@@ -58,18 +60,99 @@
                 {!! Form::close(); !!}
                 </div>
 
-              <div class="small-12 columns bump20">
                 <?php if (isset($articles)) { ?>
+                  <div class="row search-results main-content search-results bump40">
 
-                {!! var_dump($articles) !!}
+                  <?php
+                    $file_count = count($articles);
+
+                      echo "<h3>Number of results: $file_count</h3><br>";
+                      $i = 0;
+                      while($i < $file_count) {
+                  ?>
+
+                  <div class="small-12 columns large-centered medium-centered">
+
+                      <div class="small-4 columns bump20 search-results-left">
+                        <img class="thumbnail" src="<?php echo $articles[$i]->profile_img ?>">
+                        <br><br>
+
+                        <?php if ($articles[$i]->facebook): ?>
+                          <a href="{{ $articles[$i]->facebook }}"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+                        <?php endif; ?>
+
+                        <?php if ($articles[$i]->twitter): ?>
+                          <a href="{{ $articles[$i]->twitter }}"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+                        <?php endif; ?>
+
+                        <?php if ($articles[$i]->instagram): ?>
+                          <a href="{{ $articles[$i]->instagram }}"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                        <?php endif; ?>
+
+                        <?php if ($articles[$i]->youtube): ?>
+                          <a href="{{ $articles[$i]->youtube }}"><i class="fa fa-youtube-square fa-2x" aria-hidden="true"></i></a>
+                        <?php endif; ?>
+
+                        <?php if ($articles[$i]->skype): ?>
+                          <a href="{{ $articles[$i]->skype }}"><i class="fa fa-skype fa-2x" aria-hidden="true"></i></a>
+                        <?php endif; ?>
+
+                        <br>
+                        <div class="bump10">
+                          {!! ($articles[$i]->name) !!}<br>
+                          {!! ($articles[$i]->city) !!}<br><br>
+                        </div>
+                      </div>
+
+                      <div class="small-8 columns bump20">
+                        <div class="small-6 columns">
+                        <?php
+                          if ($articles[$i]->skills_learn == null) {
+                            echo 'I have nothing to learn<br><br>';
+                          } else {
+                            echo 'Skills to learn:'.' <strong><em>'.$articles[$i]->skills_learn.'</strong></em><br><br>';
+                          }
+                        ?>
+
+                        <?php
+                          if ($articles[$i]->skills_teach == null) {
+                            echo 'I have nothing to teach<br><br>';
+                          } else {
+                            echo 'Skills to teach:'.' <strong><em>'.$articles[$i]->skills_teach.'</strong></em><br><br>';
+                          }
+                        ?>
+                      </div>
+                      <div class="small-6 columns">
+                        <?php
+                          if ($articles[$i]->alt_payments == 1) {
+                            echo 'Alternate payment types accepted<br>';
+                            echo 'Payment Types Accepted:'.' '.$articles[$i]->alt_payments;
+                          } else {
+                            echo 'Alternate payment types NOT accepted<br>';
+                          }
+                        ?>
+                        <br><br>
+                        <?php
+                          if ($articles[$i]->online_lessons_bool == 1) {
+                            echo 'Online learning available<br>';
+                          } else {
+                            echo 'Face to Face learning only<br>';
+                          }
+                        ?>
+                        <br>
+                        I am available during these times:<br>
+                        {{ $articles[$i]->availability }}<br>
+                      </div>
+                      </div>
+                      <br>
+                      <hr>
+                      <br>
+                  </div>
+                  <?php $i++; } ?>
 
                 <?php } ?>
               </div>
-
             </div>
-
-
-            </div>
-        </div>
+          </div>
     </body>
 </html>

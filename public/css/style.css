@@ -120,7 +120,11 @@ li.dropdown {
 
 /*User Profile Page*/
 .user-profile-card {
-  padding: 3%;  
+  padding: 3%;
+}
+
+.left-user-profile {
+  padding: 0 5%;
 }
 
 /*Form Style*/
@@ -159,6 +163,13 @@ form input[type="label"] {
 .search-field {
   padding: 0 25% 0 25%;
 }
+
+.search-result-left {
+  padding: 0 10%;
+}
+
+/*Search Cards*/
+
 
 
 /* Bump Helpers */
