@@ -95,7 +95,7 @@
         <div class="small-12 columns">
           {!! Form::label('skills_imgs', 'Add images of your skills should you choose to do so'); !!}<br>
           {!! Form::file('skills_imgs') !!}<br><br>
-          <!-- {!! Form::file('skills_imgs', array('multiple'=>true)); !!} -->
+          <!-- {!! Form::file('skills_imgs[]', array('multiple'=>true)); !!} -->
         </div>
 
         <hr>

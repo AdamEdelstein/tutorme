@@ -13,4 +13,6 @@ class user_profileController extends Controller
       return view('frontend.user_profile');
 
   }
+
+  
 }

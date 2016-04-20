@@ -134,6 +134,7 @@
                     <h3>Pictures of my skills:<br></h3>
 
                     <img class="picture-border" src="<?php echo Auth::user()->skills_img ?>"><br>
+
                   </div>
                 </div>
 

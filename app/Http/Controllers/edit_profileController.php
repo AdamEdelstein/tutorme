@@ -56,11 +56,13 @@ class edit_profileController extends Controller
     //-----Skills Imgs-----
 
     // // getting all of the post data
-    // $files = $request->file('skills_imgs');
-    // // Making counting of uploaded images
-    // $file_count = count($files);
-    // // start count how many uploaded
-    // $uploadcount = 0;
+    $files = $request->file('skills_imgs');
+    // Making counting of uploaded images
+    $file_count = count($files);
+    // start count how many uploaded
+    $uploadcount = 0;
+    $tempSkills = "";
+
     // foreach($files as $file) {
     //   $rules = array('file' => 'required'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
     //   $validator = Validator::make(array('file'=> $file), $rules);
@@ -68,10 +70,17 @@ class edit_profileController extends Controller
     //     $destinationPath = 'uploads/skills_imgs';
     //     $filename = rand(11111,99999).'-'.$file->getClientOriginalName();
     //     $upload_success = $file->move($destinationPath, $filename);
-    //     $user->skills_img = $filename;
+    //
+    //     $tempSkills .= $filename;
     //     $uploadcount ++;
+    //     if($uploadcount < $file_count){
+    //       $tempSkills .= ',';
+    //     }
+    //
     //   }
     // }
+    //
+    // $user->skills_img = $tempSkills;
     //
     // if($uploadcount == $file_count){
     //   Session::flash('success', 'Upload successfully');
@@ -83,13 +92,12 @@ class edit_profileController extends Controller
 
 
 
+// $skillArray = explode(",",$user->skil)
 
   // Skills Images
   if($request->file('skills_imgs') !== null) {
   $s_imageName = rand(11111,99999).'-'.$request->file('skills_imgs')->getClientOriginalName();
-
-      $request->file('skills_imgs')->move(public_path('uploads/skills_imgs'), $s_imageName);
-
+  $request->file('skills_imgs')->move(public_path('uploads/skills_imgs'), $s_imageName);
   $user->skills_img = '/uploads/skills_imgs/' . $s_imageName;
   }
 
@@ -122,8 +130,9 @@ class edit_profileController extends Controller
 
   $user->save();
 
+  return Redirect::to('user_profile');
 
-  return view('frontend.user_profile');
+//  return view('frontend.user_profile', ["user" => $user]);
 
 }
 }
