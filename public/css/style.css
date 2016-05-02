@@ -99,6 +99,13 @@ li.dropdown {
   height: auto;
 }
 
+.latest-tutor-img {
+  width: 50%;
+  height: auto;
+  border-radius: 5px;
+}
+
+
 .latest-skills {
   text-align: center;
   padding: 4% 8% 4% 8%;
@@ -142,6 +149,34 @@ form input[type="text"]:focus {
   color: white;
 }
 
+form input[type="email"] {
+  border-radius: 4px;
+  border-color: white;
+  background-color: #333;
+  color: white;
+}
+
+form input[type="email"]:focus {
+  border-radius: 4px;
+  border-color: white;
+  background-color: #202020;
+  color: white;
+}
+
+form input[type="password"] {
+  border-radius: 4px;
+  border-color: white;
+  background-color: #333;
+  color: white;
+}
+
+form input[type="password"]:focus {
+  border-radius: 4px;
+  border-color: white;
+  background-color: #202020;
+  color: white;
+}
+
 form input[type="submit"] {
   border-radius: 4px;
   color: black;
@@ -166,6 +201,22 @@ form input[type="label"] {
 
 .search-result-left {
   padding: 0 10%;
+}
+
+/*Register Overrides*/
+
+.register-center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+/*Login Overrides*/
+
+.login-center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 /*Search Cards*/

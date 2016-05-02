@@ -3,17 +3,11 @@
     <head>
         <title>TutorMe - Learn something, Today!</title>
 
-
         <link href="{{{ asset('/css/foundation.css') }}}" rel="stylesheet">
         <link href="{{{ asset('/css/style.css') }}}" rel="stylesheet">
 
-
     </head>
     <body>
-
-
-
-
 
         <div class="container">
             <div class="content">
@@ -94,8 +88,8 @@
                     ?>
                     <div class="small-12 medium-4 columns">
 
-                    <?php echo $getLatestUsers[$i]->name; ?>
-                    <h2>Tutor1 (IMG)</h2>
+                    <?php echo $getLatestUsers[$i]->name; ?><br><hr style="width: 55%;">
+                    <img class="picture-border latest-tutor-img" src="<?php echo $getLatestUsers[$i]->profile_img ?>"><br><hr style="width: 55%;">
                     Name: <?php echo $getLatestUsers[$i]->name; ?><br>
                     Price: <?php echo $getLatestUsers[$i]->price; ?> an hour<br>
                     Alt Payments?: <?php
@@ -110,6 +104,7 @@
                   </div>
                   <?php $i++; } ?>
                   </div>
+
                 </div>
                 </div>
                 </div>
